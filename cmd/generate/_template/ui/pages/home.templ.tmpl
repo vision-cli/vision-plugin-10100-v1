@@ -1,0 +1,12 @@
+package pages
+
+import "{{ .PluginConfig.Module }}/ui"
+
+var DefaultHome = ui.Index(Home())
+
+templ Home() {
+	<div>
+		<h1>Home</h1>
+		<p>Home page</p>
+	</div>
+}

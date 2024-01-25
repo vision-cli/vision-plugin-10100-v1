@@ -1,0 +1,4 @@
+This plugin creates a starter 10.10.0 app. Read about 10100 apps in the book 
+https://atos-digital.github.io/10100-book and see the live demo https://10100.digital
+
+After generating the template, follow the instructions in the generated README.md

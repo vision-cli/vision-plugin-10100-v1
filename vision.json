@@ -1,0 +1,8 @@
+{
+  "plugin": {
+    "command": "plugin",
+    "module": "github.com/vision-cli/vision-plugin-10100-v1",
+    "name": "vision-plugin-plugin-v1"
+  },
+  "project_name": "vision-plugin-10100-v1"
+}
