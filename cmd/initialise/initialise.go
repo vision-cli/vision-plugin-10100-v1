@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"os/exec"
 	"strings"
 
 	"github.com/spf13/cobra"
@@ -42,6 +43,21 @@ func runCommand(cmd *cobra.Command, args []string) error {
 
 	if err != nil {
 		return fmt.Errorf("encoding json: %w", err)
+	}
+
+	err = installTempl()
+	if err != nil {
+		return fmt.Errorf("insalling templ: %w", err)
+	}
+
+	return nil
+}
+
+func installTempl() error {
+	c := exec.Command("go", "install", "github.com/a-h/templ/cmd/templ@latest")
+	_, err := c.Output()
+	if err != nil {
+		return fmt.Errorf("running 'go install templ': %w", err)
 	}
 	return nil
 }

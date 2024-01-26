@@ -19,7 +19,7 @@ go install github.com/vision-cli/vision-plugin-10100-v1@latest
 You will now see the plugin help in the vision cli
 
 ```
-vision <plugin command> --help
+vision 10100 --help
 ```
 
 You will now see the plugin available in vision's help

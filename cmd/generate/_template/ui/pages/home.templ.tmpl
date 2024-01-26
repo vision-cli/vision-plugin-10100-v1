@@ -5,8 +5,18 @@ import "{{ .PluginConfig.Module }}/ui"
 var DefaultHome = ui.Index(Home())
 
 templ Home() {
-	<div>
-		<h1>Home</h1>
-		<p>Home page</p>
+	<div class="container mx-auto">
+		<div class="flex justify-center p-5 pt-10">
+			<img src="/assets/img/10100.svg" alt="10.10.0" class="justify-center size-2/5"/>
+		</div>
+		<div class="flex justify-center pr-10 pl-10">
+			<p class="text-blue-600 text-center font-medium">Congratuations your 10.10.0 app is running!<br/>Start by adding pages in /ui, routes in /internal/server/routes.go, and handlers in /internal/server/handlers.go </p>
+		</div>
+		<div class="flex justify-center p-3">
+			<a href="https://atos-digital.github.io/10100-book/" class="text-blue-600 font-bold text-lg underline">10.10.0 Book</a>
+		</div>
+		<div class="flex justify-center">
+			<a href="https://10100.digital" class="text-blue-600 font-bold text-lg underline">Live demo</a>
+		</div>
 	</div>
 }

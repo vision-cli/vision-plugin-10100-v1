@@ -100,6 +100,11 @@ func run(cmd *cobra.Command, args []string) error {
 			return fmt.Errorf("walking dir and cloning: %w", err)
 		}
 
+		err = execTemplGenerate(outputPath)
+		if err != nil {
+			return fmt.Errorf("executing templ generate: %w", err)
+		}
+
 		err = execGoModTidy(outputPath)
 		if err != nil {
 			return fmt.Errorf("executing go mod tidy: %w", err)
@@ -118,6 +123,19 @@ func execGoModTidy(outputPath string) error {
 	_, err := c.Output()
 	if err != nil {
 		return fmt.Errorf("running 'go mod tidy': %w", err)
+	}
+	return nil
+}
+
+func execTemplGenerate(outputPath string) error {
+	if outputPath == "." {
+		outputPath = ""
+	}
+	c := exec.Command("templ", "generate")
+	c.Dir = outputPath
+	_, err := c.Output()
+	if err != nil {
+		return fmt.Errorf("running 'templ generate': %w", err)
 	}
 	return nil
 }
